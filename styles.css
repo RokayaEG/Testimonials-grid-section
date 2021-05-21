@@ -1,0 +1,104 @@
+html {
+    background-color: hsl(210, 46%, 95%);
+}
+
+body {
+    color: hsl(210, 46%, 95%);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+p {
+    font-weight: 500;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+
+/*class tags*/
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 25px;
+    padding: 10%;
+}
+
+.content {
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+
+.name {
+    align-self: center;
+}
+
+.profile {
+    text-align: left;
+    display: flex;
+    gap: 10px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    align-self: center;
+    transform: scale(0.7);
+}
+
+.title,
+.subtitle {
+    margin: 0;
+}
+
+.subtitle {
+    opacity: 0.5;
+}
+
+
+/*ID Tags*/
+
+#item1 {
+    position: relative;
+    overflow: hidden;
+    background-image: url("images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: 80% 1%;
+}
+
+#item1 .profile .profile-img {
+    border: solid 4px rgba(255, 255, 255, 0.2);
+}
+
+#item1,
+#item4 {
+    grid-column-start: span 2;
+}
+
+#item3,
+#item5 {
+    color: hsl(219, 29%, 14%);
+    box-shadow: 10px 10px 40px rgba(82, 82, 82, 0.219);
+}
+
+#item4 .profile .profile-img {
+    border: solid 4px rgba(117, 65, 200, 0.815);
+}
+
+#item5 {
+    grid-area: 1 / 4 / 3 / 4;
+}
+
+
+/*iPad and Mobile Screens */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    #item1,
+    #item4 {
+        grid-column-start: span 1;
+    }
+    #item5 {
+        grid-area: span 1;
+    }
+}
